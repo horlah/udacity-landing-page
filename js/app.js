@@ -18,6 +18,11 @@ function createNavItems() {
 		const newAnchorLink = sectionName.split(' ').join('').toLowerCase();
 		newNavAnchorItem.setAttribute('href', `#${newAnchorLink}`);
 		newNavAnchorItem.classList.add('menu__link');
+		newNavAnchorItem.addEventListener('click', event => {
+			event.preventDefault();
+			section.scrollIntoView({ behavior: 'smooth' });
+		});
+
 		newNavItem.appendChild(newNavAnchorItem);
 		fragment.appendChild(newNavItem);
 	}
